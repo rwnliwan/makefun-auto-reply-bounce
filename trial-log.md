@@ -54,5 +54,16 @@ repo; verified with a text search before commit.
 
 ## Build / bundle / check
 
-- (Filled in as the steps run; see the commit history for the exact
-  bundle file, sha256, and check result.)
+- Bundle attempt 1 (26 Nov 2026 ~05:35 WITA): kit CLI `bundle` with
+  `--no-discover --no-family --session <my own session file>` plus
+  `--harness muse-app --harness-version 1.3 --model muse-spark-1.3
+  --provider meta --effort default --mcp none`. REJECTED, no bundle
+  written: "the run record is not whole — the earliest session opens
+  with no message of the person's in words". Cause: this builder runs
+  as a subagent, so its session file opens with the coordinator's
+  hand-off, not with the person's typed words. Per the build brief I
+  stopped here instead of working around it: no `--parent-session`,
+  no `--prompt-origin handed-off`. Session file for re-bundle:
+  `~/agents/agent-4d4e410c-8c87-4ef9-8e68-f37a38fdaddd/sessions/4d4e410c-8c87-4ef9-8e68-f37a38fdaddd.jsonl`.
+  No `check` run was possible (no bundle exists) and no submit was made.
+  Awaiting coordinator re-bundle.
